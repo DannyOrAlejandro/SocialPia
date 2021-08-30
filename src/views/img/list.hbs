@@ -1,0 +1,30 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each imgs}}{{!--FOREACH PARA MOSTRARLOS--}}
+        <div class="col-md-3">
+            <div class="card text-center mb-5 animate__animated animate__flipInY animate__slow">
+                <div class="card-body">
+                    <h3 class="card-title text-uppercase">
+                        {{title}}{{!--NOMBRE COLUMNA EN LA BASE DE DATOS--}}
+                    </h3>
+                    <img src="{{img}}" alt="" class="img-fluid">
+                    <p class="m-2">{{description}}</p>
+                    <p>{{timeago created_at}}</p> {{!--VAMOS USAR EL METOO timeago Y LE PASO EL PARAMETRO COMO
+                    EL NOMBRE DE LA COLUMNA DONDE SE ALMACENA EL LA FECHA EN LA BASE DE DATOS EL COMPORTMIENTO
+                    DE TIMEAGO LOCINFIGURE EN lib/handlerbar.js--}}
+                    <a href="/links/delete/{{id}}" class="btn btn-danger">Delete</a>
+                    <a href="/links/edit/{{id}}" class="btn btn-secondary">Edit</a>
+                </div>
+            </div>
+        </div>
+
+        {{else}} {{!--SI NO EXSTE EL PARAMETRO imgs O NO HAY REGISTRO CREEME ESTOS ELEMETOS--}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>There are not link saved yet</p>
+                <a href="/links/add" class="btn btn">Create One!!</a>
+            </div>
+        </div>
+        {{/each}}{{!--CIERRO EL FOREAXH--}}
+    </div>
+</div>

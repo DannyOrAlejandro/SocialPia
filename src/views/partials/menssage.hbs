@@ -1,0 +1,34 @@
+{{#if success}} {{!--SI EXISTE EL MENSAJE CON NOMRBE success ALMACENADO CON FLASH EN VARIABLES LOCALES DESDE
+EL ARCHIVO PRNCIPAL ME LO PINTARA--}}
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto animate__animated animate__flipInY animate__slow">
+            <div class="alert alert-success alert-dismissible fade show text-center" role="alert">{{!--alert-success: el color,
+                alert-dimissible:darle click a un icono se valla el mensaje, fade:animacio de desvanecimiento,
+                show para que se muestre cuando reconoscamos el mensaje,
+                role: especifica mejor al navegaodor que es esa porcio de codigo--}}
+                {{success}}
+                <button class="close" data-dismiss="alert" aria-label="Close">{{!--la x para el
+                    alert-dismissible--}}
+                    <span aria-hidden="true">&times;</span>{{!--&times; icono de cerrar--}}
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}{{!--FIN IF--}}
+{{#if message}}
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto animate__animated animate__flipInY animate__slow">
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                {{message}}
+                <button class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
